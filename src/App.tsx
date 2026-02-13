@@ -19,7 +19,6 @@ import { Shop } from './pages/Shop';
 import { OrderFoodies } from './pages/OrderFoodies';
 import { FoodiesRoute } from './pages/FoodiesRoute';
 import { FoodDelivery } from './pages/FoodDelivery';
-import { FoodConfirmOrder } from './pages/FoodConfirmOrder';
 import { FoodPayment } from './pages/FoodPayment';
 import { FoodAddCard } from './pages/FoodAddCard';
 import { FoodMobileMoneyPage } from './pages/FoodMobileMoneyPage';
@@ -336,10 +335,6 @@ function AppContent() {
             <Route
               path="/food-delivery"
               element={<FoodDelivery />}
-            />
-            <Route
-              path="/food-confirm-order"
-              element={<FoodConfirmOrder />}
             />
             <Route
               path="/food-payment"

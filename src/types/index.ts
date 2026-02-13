@@ -1,4 +1,13 @@
- export interface RideRequest {
+ export interface FoodItem {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  storeId: string;
+  storeName: string;
+}
+
+export interface RideRequest {
   id: string;
   destination: string;
   pickup: string;
@@ -19,6 +28,25 @@
     latitude: number;
     longitude: number;
   };
+  type?: 'ride';
+}
+
+export interface FoodRequest {
+  id: string;
+  type: 'food';
+  deliveryType: 'motorbike' | 'car' | 'bicycle';
+  items: FoodItem[];
+  subtotal: number;
+  deliveryFee: number;
+  total: number;
+  pickupLocation: string;
+  dropoffLocation: string;
+  timestamp: number;
+  status: 'pending' | 'accepted' | 'arrived' | 'rejected' | 'cancelled' | 'started' | 'completed';
+  userId: string;
+  userName: string;
+  driverId?: string;
+  driverInfo?: DriverInfo;
 }
 
 export interface DriverInfo {

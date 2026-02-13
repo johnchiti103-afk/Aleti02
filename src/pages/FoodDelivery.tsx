@@ -151,7 +151,19 @@ export function FoodDelivery() {
   const handleSelectMode = () => {
     if (selectedMode) {
       setDeliveryMode(selectedMode.id, selectedMode.deliveryFee);
-      navigate('/food-confirm-order');
+
+      navigate('/confirm-order', {
+        state: {
+          requestType: 'food',
+          selectedDeliveryType: selectedMode.id,
+          foodItems: sortedModes.length > 0 ? currentLocationFoods : [],
+          subtotal: foodSubtotal,
+          deliveryFee: selectedMode.deliveryFee,
+          total: total,
+          pickupLocation: 'Restaurant',
+          dropoffLocation: deliveryLocation || 'Delivery Location'
+        }
+      });
     }
   };
 
